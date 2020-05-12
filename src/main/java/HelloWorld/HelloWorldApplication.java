@@ -1,6 +1,7 @@
 package HelloWorld;
 
 import HelloWorld.core.MessageQueueClient;
+import HelloWorld.core.bundle.MyConfiguredBundle;
 import HelloWorld.health.TemplateHealthCheck;
 import HelloWorld.resources.HelloWorldResource;
 import io.dropwizard.Application;
@@ -25,6 +26,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     @Override
     public void initialize(final Bootstrap<HelloWorldConfiguration> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
+        bootstrap.addBundle(new MyConfiguredBundle());
     }
 
     @Override

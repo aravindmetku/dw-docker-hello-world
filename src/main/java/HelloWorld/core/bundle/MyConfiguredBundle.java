@@ -1,21 +1,18 @@
 package HelloWorld.core.bundle;
 
+import HelloWorld.HelloWorldConfiguration;
 import io.dropwizard.ConfiguredBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-interface MyConfiguredBundleConfig {
-    String getBundleSpecificConfig();
-}
-
-public class MyConfiguredBundle implements ConfiguredBundle<MyConfiguredBundleConfig> {
+public class MyConfiguredBundle implements ConfiguredBundle<HelloWorldConfiguration> {
     @Override
-    public void run(MyConfiguredBundleConfig applicationConfig, Environment environment) {
-        applicationConfig.getBundleSpecificConfig();
+    public void run(HelloWorldConfiguration applicationConfig, Environment environment) {
+        System.out.println("running my config bundle: " + applicationConfig.getDefaultName());
     }
 
     @Override
     public void initialize(Bootstrap<?> bootstrap) {
-
+        System.out.println("Myconfig bundle is intiated");
     }
 }
