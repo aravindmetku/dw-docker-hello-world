@@ -1,0 +1,10 @@
+HelloWorld/core/MessageQueueFactory.class
+HelloWorld/HelloWorldConfiguration.class
+HelloWorld/core/MessageQueueFactory$1.class
+HelloWorld/HelloWorldApplication.class
+HelloWorld/core/MessageQueueClient.class
+HelloWorld/api/Saying.class
+HelloWorld/core/bundle/MyConfiguredBundle.class
+HelloWorld/health/TemplateHealthCheck.class
+HelloWorld/core/tasks/ExampleTask.class
+HelloWorld/resources/HelloWorldResource.class
