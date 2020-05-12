@@ -1,5 +1,6 @@
 package HelloWorld;
 
+import HelloWorld.core.MessageQueueClient;
 import HelloWorld.health.TemplateHealthCheck;
 import HelloWorld.resources.HelloWorldResource;
 import io.dropwizard.Application;
@@ -25,6 +26,9 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     @Override
     public void run(final HelloWorldConfiguration configuration,
                     final Environment environment) {
+        MessageQueueClient messageQueueClient = configuration.getMessageQueueFactory().build(environment);
+        messageQueueClient.printWhatIGot();
+
         final HelloWorldResource resource = new HelloWorldResource(configuration.getTemplate(), configuration.getDefaultName());
         environment.jersey().register(resource);
 

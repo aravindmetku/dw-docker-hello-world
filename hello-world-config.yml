@@ -1,2 +1,6 @@
 template: Hello, %s!
 defaultName: Stranger
+
+messageQueue:
+    host: mq.example.com
+    port: 5673
