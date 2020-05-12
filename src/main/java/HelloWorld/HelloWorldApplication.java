@@ -4,8 +4,12 @@ import HelloWorld.core.MessageQueueClient;
 import HelloWorld.health.TemplateHealthCheck;
 import HelloWorld.resources.HelloWorldResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.sslreload.SslReloadBundle;
+
+import java.util.concurrent.ExecutorService;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
@@ -20,7 +24,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
 
     @Override
     public void initialize(final Bootstrap<HelloWorldConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
     }
 
     @Override
