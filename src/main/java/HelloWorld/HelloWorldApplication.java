@@ -2,6 +2,7 @@ package HelloWorld;
 
 import HelloWorld.core.MessageQueueClient;
 import HelloWorld.core.bundle.MyConfiguredBundle;
+import HelloWorld.core.tasks.ExampleTask;
 import HelloWorld.health.TemplateHealthCheck;
 import HelloWorld.resources.HelloWorldResource;
 import io.dropwizard.Application;
@@ -41,6 +42,8 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         final TemplateHealthCheck healthCheck =
                 new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
+
+        environment.admin().addTask(new ExampleTask(messageQueueClient));
     }
 
 }

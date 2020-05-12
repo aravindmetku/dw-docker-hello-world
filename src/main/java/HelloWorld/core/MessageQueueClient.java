@@ -14,6 +14,10 @@ public class MessageQueueClient {
         System.out.println("host = " + host + ", port = " + port);
     }
 
+    public void printOnTask() {
+        System.out.println("gotta do something?");
+    }
+
     public void close() {
         System.out.println("message queue shall be closed");
     }
