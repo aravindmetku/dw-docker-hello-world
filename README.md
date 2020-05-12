@@ -11,3 +11,10 @@ Health Check
 ---
 
 To see your applications health enter url `http://localhost:8081/healthcheck`
+
+Docker 
+---
+
+1. Run `mvn clean install` to build your application
+1. docker build -t dw-hello-world .
+1. docker run --detach -p 8080:8080 dw-hello-world
